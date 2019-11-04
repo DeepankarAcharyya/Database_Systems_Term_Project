@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://app.creately.com/player/standard/src/index.html?playerId=rcru8h8snj -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Boson</title><!--<base href="/player/standard/src/">--><base href="."><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="https://app.creately.com/player/standard/src/favicon.ico"><link rel="stylsheet" href="https://app.creately.com/player/standard/src/loading.css" ;=""><style>body {
+          padding: 0;
+          margin: 0;
+      }
+
+      .bsn-spinner {
+          position: absolute;
+          width: 70px;
+          height: 70px;
+      }
+
+      .bsn-spinner:before {
+          display: block;
+          width: 60px;
+          height: 60px;
+          border-top: 5px solid #e4e4e4;
+          border-right: 5px solid transparent;
+          border-bottom: 5px solid transparent;
+          border-left: 5px solid transparent;
+          border-radius: 50%;
+          -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear;
+          content: '';
+      }
+
+      .bsn-icon-bulb, .bsn-spinner {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          left: 50%;
+          top: 50%;
+      }</style><link href="./styles.b302c0f90aeecf9a85c5.bundle.css" rel="stylesheet"><style>.std-app-canvas[_ngcontent-c0]{cursor:move}</style><style>@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.fx-bg-transition[_ngcontent-c1]{transition:background-color .1s ease,background .1s ease}.tb-btn-container[_ngcontent-c1]   .fx-button[_ngcontent-c1]{position:relative;color:#696969}.tb-btn-container[_ngcontent-c1]   .fx-button.fx-icon[_ngcontent-c1]:hover{background-color:hsla(0,0%,100%,.5)}.tb-btn-container[_ngcontent-c1]   .fx-button.fx-icon[_ngcontent-c1]:active{background-color:hsla(0,0%,100%,.8)}*[_ngcontent-c1]{margin:0;padding:0;border:0}h2[_ngcontent-c1]{font-size:18px}h2[_ngcontent-c1], h3[_ngcontent-c1]{font-weight:400}h3[_ngcontent-c1]{font-size:16px}.fx-center-all[_ngcontent-c1]{display:-webkit-box;display:-ms-flexbox;display:flex;-moz-justify-content:center;-ms-justify-content:center;-webkit-box-pack:center;justify-content:center;-ms-flex-pack:center;-moz-align-items:center;-ms-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.fx-center-horizontal-without-flex[_ngcontent-c1]{top:0;left:0;right:0;margin:0 auto;position:absolute}.fx-center-vertical[_ngcontent-c1]{display:-webkit-box;display:-ms-flexbox;display:flex;-moz-flex-direction:row;-ms-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;-moz-align-items:center;-ms-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.fx-center-without-flex[_ngcontent-c1]{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);left:50%;top:50%;position:absolute}.fx-left[_ngcontent-c1]{float:left;text-align:left}.fx-right[_ngcontent-c1]{float:right;text-align:right}.fx-center[_ngcontent-c1]{margin:0 auto;text-align:center}.fx-hidden[_ngcontent-c1]{display:none}.fx-invisible[_ngcontent-c1]{visibility:hidden}.fx-round[_ngcontent-c1], .std-sh-panel-container[_ngcontent-c1]   .fx-button[_ngcontent-c1]{border-radius:100%}.fx-floating[_ngcontent-c1]{position:absolute;z-index:1}.fx-padding[_ngcontent-c1]{padding:10px}.fx-margin[_ngcontent-c1]{margin:10px}.fx-margin-top-5[_ngcontent-c1]{margin-top:5px}.fx-margin-top-10[_ngcontent-c1]{margin-top:10px}.fx-padding-top-5[_ngcontent-c1]{padding-top:5px}.fx-margin-bottom-5[_ngcontent-c1]{margin-bottom:5px}.fx-margin-bottom-10[_ngcontent-c1]{margin-bottom:10px}.fx-margin-bottom-20[_ngcontent-c1]{margin-bottom:20px}.fx-padding-bottom-5[_ngcontent-c1]{padding-bottom:5px}.fx-padding-bottom-10[_ngcontent-c1]{padding-bottom:10px}.fx-no-padding[_ngcontent-c1]{padding:0}.fx-no-margin[_ngcontent-c1]{margin:0}.fx-no-float[_ngcontent-c1]{float:none}.fx-ellipsis[_ngcontent-c1]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.fx-cover[_ngcontent-c1], .fx-span-both[_ngcontent-c1]{height:100%;width:100%}.fx-span-width[_ngcontent-c1]{width:100%}.fx-span-height[_ngcontent-c1]{height:100%}.fx-cover[_ngcontent-c1]{position:absolute;overflow:hidden}.fx-fix-top[_ngcontent-c1]{top:0}.fx-fix-bottom[_ngcontent-c1]{bottom:0}.fx-fix-right[_ngcontent-c1]{right:0}.fx-fix-left[_ngcontent-c1]{left:0}.fx-fix-top-left[_ngcontent-c1]{top:0;left:0}.fx-fix-top-right[_ngcontent-c1]{top:0;right:0}.fx-overflow-hidden[_ngcontent-c1]{overflow:hidden}button.extra-light-grey[_ngcontent-c1], div.extra-light-grey[_ngcontent-c1]{background-color:#f2f2f2}a.extra-light-grey[_ngcontent-c1], h1.extra-light-grey[_ngcontent-c1], h2.extra-light-grey[_ngcontent-c1], h3.extra-light-grey[_ngcontent-c1], i.extra-light-grey[_ngcontent-c1], label.extra-light-grey[_ngcontent-c1], p.extra-light-grey[_ngcontent-c1], span.extra-light-grey[_ngcontent-c1]{color:#f2f2f2}button.light-grey[_ngcontent-c1], div.light-grey[_ngcontent-c1]{background-color:#e4e4e4}a.light-grey[_ngcontent-c1], h1.light-grey[_ngcontent-c1], h2.light-grey[_ngcontent-c1], h3.light-grey[_ngcontent-c1], i.light-grey[_ngcontent-c1], label.light-grey[_ngcontent-c1], p.light-grey[_ngcontent-c1], span.light-grey[_ngcontent-c1]{color:#e4e4e4}button.medium-grey[_ngcontent-c1], div.medium-grey[_ngcontent-c1]{background-color:#d8d8d8}a.medium-grey[_ngcontent-c1], h1.medium-grey[_ngcontent-c1], h2.medium-grey[_ngcontent-c1], h3.medium-grey[_ngcontent-c1], i.medium-grey[_ngcontent-c1], label.medium-grey[_ngcontent-c1], p.medium-grey[_ngcontent-c1], span.medium-grey[_ngcontent-c1]{color:#d8d8d8}button.grey[_ngcontent-c1], div.grey[_ngcontent-c1]{background-color:#a09f9f}a.grey[_ngcontent-c1], h1.grey[_ngcontent-c1], h2.grey[_ngcontent-c1], h3.grey[_ngcontent-c1], i.grey[_ngcontent-c1], label.grey[_ngcontent-c1], p.grey[_ngcontent-c1], span.grey[_ngcontent-c1]{color:#a09f9f}button.dark-grey[_ngcontent-c1], div.dark-grey[_ngcontent-c1]{background-color:#696969}a.dark-grey[_ngcontent-c1], h1.dark-grey[_ngcontent-c1], h2.dark-grey[_ngcontent-c1], h3.dark-grey[_ngcontent-c1], i.dark-grey[_ngcontent-c1], label.dark-grey[_ngcontent-c1], p.dark-grey[_ngcontent-c1], span.dark-grey[_ngcontent-c1]{color:#696969}button.crimson[_ngcontent-c1], div.crimson[_ngcontent-c1]{background-color:#f05758}a.crimson[_ngcontent-c1], h1.crimson[_ngcontent-c1], h2.crimson[_ngcontent-c1], h3.crimson[_ngcontent-c1], i.crimson[_ngcontent-c1], label.crimson[_ngcontent-c1], p.crimson[_ngcontent-c1], span.crimson[_ngcontent-c1]{color:#f05758}button.black[_ngcontent-c1], div.black[_ngcontent-c1]{background-color:#141414}a.black[_ngcontent-c1], h1.black[_ngcontent-c1], h2.black[_ngcontent-c1], h3.black[_ngcontent-c1], i.black[_ngcontent-c1], label.black[_ngcontent-c1], p.black[_ngcontent-c1], span.black[_ngcontent-c1]{color:#141414}button.yellow[_ngcontent-c1], div.yellow[_ngcontent-c1]{background-color:#faa72d}a.yellow[_ngcontent-c1], h1.yellow[_ngcontent-c1], h2.yellow[_ngcontent-c1], h3.yellow[_ngcontent-c1], i.yellow[_ngcontent-c1], label.yellow[_ngcontent-c1], p.yellow[_ngcontent-c1], span.yellow[_ngcontent-c1]{color:#faa72d}button.light-yellow[_ngcontent-c1], div.light-yellow[_ngcontent-c1]{background-color:#fdc977}a.light-yellow[_ngcontent-c1], h1.light-yellow[_ngcontent-c1], h2.light-yellow[_ngcontent-c1], h3.light-yellow[_ngcontent-c1], i.light-yellow[_ngcontent-c1], label.light-yellow[_ngcontent-c1], p.light-yellow[_ngcontent-c1], span.light-yellow[_ngcontent-c1]{color:#fdc977}button.blue[_ngcontent-c1], div.blue[_ngcontent-c1]{background-color:#1a7bb9}a.blue[_ngcontent-c1], h1.blue[_ngcontent-c1], h2.blue[_ngcontent-c1], h3.blue[_ngcontent-c1], i.blue[_ngcontent-c1], label.blue[_ngcontent-c1], p.blue[_ngcontent-c1], span.blue[_ngcontent-c1]{color:#1a7bb9}button.green[_ngcontent-c1], div.green[_ngcontent-c1]{background-color:#6da067}a.green[_ngcontent-c1], h1.green[_ngcontent-c1], h2.green[_ngcontent-c1], h3.green[_ngcontent-c1], i.green[_ngcontent-c1], label.green[_ngcontent-c1], p.green[_ngcontent-c1], span.green[_ngcontent-c1]{color:#6da067}button.white[_ngcontent-c1], div.white[_ngcontent-c1]{background-color:#fff}a.white[_ngcontent-c1], h1.white[_ngcontent-c1], h2.white[_ngcontent-c1], h3.white[_ngcontent-c1], i.white[_ngcontent-c1], label.white[_ngcontent-c1], p.white[_ngcontent-c1], span.white[_ngcontent-c1]{color:#fff}button.facebook[_ngcontent-c1], div.facebook[_ngcontent-c1]{background-color:#324b7f}a.facebook[_ngcontent-c1], h1.facebook[_ngcontent-c1], h2.facebook[_ngcontent-c1], h3.facebook[_ngcontent-c1], i.facebook[_ngcontent-c1], label.facebook[_ngcontent-c1], p.facebook[_ngcontent-c1], span.facebook[_ngcontent-c1]{color:#324b7f}button.twitter[_ngcontent-c1], div.twitter[_ngcontent-c1]{background-color:#339dc3}a.twitter[_ngcontent-c1], h1.twitter[_ngcontent-c1], h2.twitter[_ngcontent-c1], h3.twitter[_ngcontent-c1], i.twitter[_ngcontent-c1], label.twitter[_ngcontent-c1], p.twitter[_ngcontent-c1], span.twitter[_ngcontent-c1]{color:#339dc3}button.google[_ngcontent-c1], div.google[_ngcontent-c1]{background-color:#dc4535}a.google[_ngcontent-c1], h1.google[_ngcontent-c1], h2.google[_ngcontent-c1], h3.google[_ngcontent-c1], i.google[_ngcontent-c1], label.google[_ngcontent-c1], p.google[_ngcontent-c1], span.google[_ngcontent-c1]{color:#dc4535}button.linkedin[_ngcontent-c1], div.linkedin[_ngcontent-c1]{background-color:#025a84}a.linkedin[_ngcontent-c1], h1.linkedin[_ngcontent-c1], h2.linkedin[_ngcontent-c1], h3.linkedin[_ngcontent-c1], i.linkedin[_ngcontent-c1], label.linkedin[_ngcontent-c1], p.linkedin[_ngcontent-c1], span.linkedin[_ngcontent-c1]{color:#025a84}.std-sh-panel-container[_ngcontent-c1]   .fx-button[_ngcontent-c1]   i[_ngcontent-c1]{font-size:22px;color:#fff}.std-sh-panel-container[_ngcontent-c1]   label[_ngcontent-c1]{display:none}.std-sh-panel-container[_ngcontent-c1]   .ss-button-container[_ngcontent-c1]{display:inline-block;margin-left:20px}.std-sh-panel-container[_ngcontent-c1]   .ss-button-container[_ngcontent-c1]:first-child{margin-left:0}.tb-container[_ngcontent-c1]{width:100%;height:40px;line-height:40px;display:-webkit-box;display:-ms-flexbox;display:flex;background-color:#e4e4e4;transition:opacity .1s ease,-webkit-transform .1s ease;transition:transform .1s ease,opacity .1s ease;transition:transform .1s ease,opacity .1s ease,-webkit-transform .1s ease;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0);opacity:.5;z-index:4;transition-delay:.2s}.tb-container[_ngcontent-c1]   .tb-sliding-panel[_ngcontent-c1] > *[_ngcontent-c1]{transition:opacity .3s ease}.tb-container[_ngcontent-c1]   .tb-sliding-panel[_ngcontent-c1]:hover   .tb-sliding-panel-children[_ngcontent-c1]{opacity:.5}.tb-container[_ngcontent-c1]   .tb-sliding-panel[_ngcontent-c1]:hover   .tb-sliding-panel-children[_ngcontent-c1]:hover{opacity:1}.tb-container[_ngcontent-c1]   .tb-sliding-panel-children[_ngcontent-c1] > *[_ngcontent-c1]{transition:opacity .3s ease}.tb-container[_ngcontent-c1]   .tb-sliding-panel[_ngcontent-c1]:hover   .tb-sliding-panel-children[_ngcontent-c1] > *[_ngcontent-c1]{opacity:.5}.tb-container[_ngcontent-c1]   .tb-sliding-panel[_ngcontent-c1]:hover   .tb-sliding-panel-children[_ngcontent-c1] > [_ngcontent-c1]:hover{opacity:1}.tb-container[_ngcontent-c1]   .thumbnail-carousel-content[_ngcontent-c1] > *[_ngcontent-c1]{transition:opacity .3s ease}.tb-container[_ngcontent-c1]   .thumbnail-carousel-content[_ngcontent-c1]:hover   .tci-link-item[_ngcontent-c1]{opacity:.5}.tb-container[_ngcontent-c1]   .thumbnail-carousel-content[_ngcontent-c1]:hover   .tci-link-item[_ngcontent-c1]:hover{opacity:1}.tb-container[_ngcontent-c1]   .tci-link-item[_ngcontent-c1] > *[_ngcontent-c1]{transition:opacity .3s ease}.tb-container[_ngcontent-c1]   .thumbnail-carousel-content[_ngcontent-c1]:hover   .tci-link-item[_ngcontent-c1] > *[_ngcontent-c1]{opacity:.5}.tb-container[_ngcontent-c1]   .thumbnail-carousel-content[_ngcontent-c1]:hover   .tci-link-item[_ngcontent-c1] > [_ngcontent-c1]:hover{opacity:1}.tb-container[_ngcontent-c1]:hover{opacity:1;transition-delay:0s}.tb-button[_ngcontent-c1]{padding-left:5px;padding-right:5px}.tb-button[_ngcontent-c1]   i[_ngcontent-c1]{font-size:1.6rem}.tb-btn-container.center[_ngcontent-c1]{-moz-flex-grow:1;-ms-flex-grow:1;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.std-app-container[_ngcontent-c1]:hover   .tb-container[_ngcontent-c1]{-webkit-transform:translateZ(0);transform:translateZ(0)}.std-tb-btn-count[_ngcontent-c1]{font-size:12px;color:#696969;position:relative;top:2px;left:-2px}</style><style>@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.fx-bg-transition[_ngcontent-c2]{transition:background-color .1s ease,background .1s ease}.tb-btn-container[_ngcontent-c2]   .fx-button[_ngcontent-c2]{position:relative;color:#696969}.tb-btn-container[_ngcontent-c2]   .fx-button.fx-icon[_ngcontent-c2]:hover{background-color:hsla(0,0%,100%,.5)}.tb-btn-container[_ngcontent-c2]   .fx-button.fx-icon[_ngcontent-c2]:active{background-color:hsla(0,0%,100%,.8)}*[_ngcontent-c2]{margin:0;padding:0;border:0}h2[_ngcontent-c2]{font-size:18px}h2[_ngcontent-c2], h3[_ngcontent-c2]{font-weight:400}h3[_ngcontent-c2]{font-size:16px}.fx-center-all[_ngcontent-c2]{display:-webkit-box;display:-ms-flexbox;display:flex;-moz-justify-content:center;-ms-justify-content:center;-webkit-box-pack:center;justify-content:center;-ms-flex-pack:center;-moz-align-items:center;-ms-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.fx-center-horizontal-without-flex[_ngcontent-c2]{top:0;left:0;right:0;margin:0 auto;position:absolute}.fx-center-vertical[_ngcontent-c2]{display:-webkit-box;display:-ms-flexbox;display:flex;-moz-flex-direction:row;-ms-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;-moz-align-items:center;-ms-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.fx-center-without-flex[_ngcontent-c2]{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);left:50%;top:50%;position:absolute}.fx-left[_ngcontent-c2]{float:left;text-align:left}.fx-right[_ngcontent-c2]{float:right;text-align:right}.fx-center[_ngcontent-c2]{margin:0 auto;text-align:center}.fx-hidden[_ngcontent-c2]{display:none}.fx-invisible[_ngcontent-c2]{visibility:hidden}.fx-round[_ngcontent-c2], .std-sh-panel-container[_ngcontent-c2]   .fx-button[_ngcontent-c2]{border-radius:100%}.fx-floating[_ngcontent-c2]{position:absolute;z-index:1}.fx-padding[_ngcontent-c2]{padding:10px}.fx-margin[_ngcontent-c2]{margin:10px}.fx-margin-top-5[_ngcontent-c2]{margin-top:5px}.fx-margin-top-10[_ngcontent-c2]{margin-top:10px}.fx-padding-top-5[_ngcontent-c2]{padding-top:5px}.fx-margin-bottom-5[_ngcontent-c2]{margin-bottom:5px}.fx-margin-bottom-10[_ngcontent-c2]{margin-bottom:10px}.fx-margin-bottom-20[_ngcontent-c2]{margin-bottom:20px}.fx-padding-bottom-5[_ngcontent-c2]{padding-bottom:5px}.fx-padding-bottom-10[_ngcontent-c2]{padding-bottom:10px}.fx-no-padding[_ngcontent-c2]{padding:0}.fx-no-margin[_ngcontent-c2]{margin:0}.fx-no-float[_ngcontent-c2]{float:none}.fx-ellipsis[_ngcontent-c2]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.fx-cover[_ngcontent-c2], .fx-span-both[_ngcontent-c2]{height:100%;width:100%}.fx-span-width[_ngcontent-c2]{width:100%}.fx-span-height[_ngcontent-c2]{height:100%}.fx-cover[_ngcontent-c2]{position:absolute;overflow:hidden}.fx-fix-top[_ngcontent-c2]{top:0}.fx-fix-bottom[_ngcontent-c2]{bottom:0}.fx-fix-right[_ngcontent-c2]{right:0}.fx-fix-left[_ngcontent-c2]{left:0}.fx-fix-top-left[_ngcontent-c2]{top:0;left:0}.fx-fix-top-right[_ngcontent-c2]{top:0;right:0}.fx-overflow-hidden[_ngcontent-c2]{overflow:hidden}button.extra-light-grey[_ngcontent-c2], div.extra-light-grey[_ngcontent-c2]{background-color:#f2f2f2}a.extra-light-grey[_ngcontent-c2], h1.extra-light-grey[_ngcontent-c2], h2.extra-light-grey[_ngcontent-c2], h3.extra-light-grey[_ngcontent-c2], i.extra-light-grey[_ngcontent-c2], label.extra-light-grey[_ngcontent-c2], p.extra-light-grey[_ngcontent-c2], span.extra-light-grey[_ngcontent-c2]{color:#f2f2f2}button.light-grey[_ngcontent-c2], div.light-grey[_ngcontent-c2]{background-color:#e4e4e4}a.light-grey[_ngcontent-c2], h1.light-grey[_ngcontent-c2], h2.light-grey[_ngcontent-c2], h3.light-grey[_ngcontent-c2], i.light-grey[_ngcontent-c2], label.light-grey[_ngcontent-c2], p.light-grey[_ngcontent-c2], span.light-grey[_ngcontent-c2]{color:#e4e4e4}button.medium-grey[_ngcontent-c2], div.medium-grey[_ngcontent-c2]{background-color:#d8d8d8}a.medium-grey[_ngcontent-c2], h1.medium-grey[_ngcontent-c2], h2.medium-grey[_ngcontent-c2], h3.medium-grey[_ngcontent-c2], i.medium-grey[_ngcontent-c2], label.medium-grey[_ngcontent-c2], p.medium-grey[_ngcontent-c2], span.medium-grey[_ngcontent-c2]{color:#d8d8d8}button.grey[_ngcontent-c2], div.grey[_ngcontent-c2]{background-color:#a09f9f}a.grey[_ngcontent-c2], h1.grey[_ngcontent-c2], h2.grey[_ngcontent-c2], h3.grey[_ngcontent-c2], i.grey[_ngcontent-c2], label.grey[_ngcontent-c2], p.grey[_ngcontent-c2], span.grey[_ngcontent-c2]{color:#a09f9f}button.dark-grey[_ngcontent-c2], div.dark-grey[_ngcontent-c2]{background-color:#696969}a.dark-grey[_ngcontent-c2], h1.dark-grey[_ngcontent-c2], h2.dark-grey[_ngcontent-c2], h3.dark-grey[_ngcontent-c2], i.dark-grey[_ngcontent-c2], label.dark-grey[_ngcontent-c2], p.dark-grey[_ngcontent-c2], span.dark-grey[_ngcontent-c2]{color:#696969}button.crimson[_ngcontent-c2], div.crimson[_ngcontent-c2]{background-color:#f05758}a.crimson[_ngcontent-c2], h1.crimson[_ngcontent-c2], h2.crimson[_ngcontent-c2], h3.crimson[_ngcontent-c2], i.crimson[_ngcontent-c2], label.crimson[_ngcontent-c2], p.crimson[_ngcontent-c2], span.crimson[_ngcontent-c2]{color:#f05758}button.black[_ngcontent-c2], div.black[_ngcontent-c2]{background-color:#141414}a.black[_ngcontent-c2], h1.black[_ngcontent-c2], h2.black[_ngcontent-c2], h3.black[_ngcontent-c2], i.black[_ngcontent-c2], label.black[_ngcontent-c2], p.black[_ngcontent-c2], span.black[_ngcontent-c2]{color:#141414}button.yellow[_ngcontent-c2], div.yellow[_ngcontent-c2]{background-color:#faa72d}a.yellow[_ngcontent-c2], h1.yellow[_ngcontent-c2], h2.yellow[_ngcontent-c2], h3.yellow[_ngcontent-c2], i.yellow[_ngcontent-c2], label.yellow[_ngcontent-c2], p.yellow[_ngcontent-c2], span.yellow[_ngcontent-c2]{color:#faa72d}button.light-yellow[_ngcontent-c2], div.light-yellow[_ngcontent-c2]{background-color:#fdc977}a.light-yellow[_ngcontent-c2], h1.light-yellow[_ngcontent-c2], h2.light-yellow[_ngcontent-c2], h3.light-yellow[_ngcontent-c2], i.light-yellow[_ngcontent-c2], label.light-yellow[_ngcontent-c2], p.light-yellow[_ngcontent-c2], span.light-yellow[_ngcontent-c2]{color:#fdc977}button.blue[_ngcontent-c2], div.blue[_ngcontent-c2]{background-color:#1a7bb9}a.blue[_ngcontent-c2], h1.blue[_ngcontent-c2], h2.blue[_ngcontent-c2], h3.blue[_ngcontent-c2], i.blue[_ngcontent-c2], label.blue[_ngcontent-c2], p.blue[_ngcontent-c2], span.blue[_ngcontent-c2]{color:#1a7bb9}button.green[_ngcontent-c2], div.green[_ngcontent-c2]{background-color:#6da067}a.green[_ngcontent-c2], h1.green[_ngcontent-c2], h2.green[_ngcontent-c2], h3.green[_ngcontent-c2], i.green[_ngcontent-c2], label.green[_ngcontent-c2], p.green[_ngcontent-c2], span.green[_ngcontent-c2]{color:#6da067}button.white[_ngcontent-c2], div.white[_ngcontent-c2]{background-color:#fff}a.white[_ngcontent-c2], h1.white[_ngcontent-c2], h2.white[_ngcontent-c2], h3.white[_ngcontent-c2], i.white[_ngcontent-c2], label.white[_ngcontent-c2], p.white[_ngcontent-c2], span.white[_ngcontent-c2]{color:#fff}button.facebook[_ngcontent-c2], div.facebook[_ngcontent-c2]{background-color:#324b7f}a.facebook[_ngcontent-c2], h1.facebook[_ngcontent-c2], h2.facebook[_ngcontent-c2], h3.facebook[_ngcontent-c2], i.facebook[_ngcontent-c2], label.facebook[_ngcontent-c2], p.facebook[_ngcontent-c2], span.facebook[_ngcontent-c2]{color:#324b7f}button.twitter[_ngcontent-c2], div.twitter[_ngcontent-c2]{background-color:#339dc3}a.twitter[_ngcontent-c2], h1.twitter[_ngcontent-c2], h2.twitter[_ngcontent-c2], h3.twitter[_ngcontent-c2], i.twitter[_ngcontent-c2], label.twitter[_ngcontent-c2], p.twitter[_ngcontent-c2], span.twitter[_ngcontent-c2]{color:#339dc3}button.google[_ngcontent-c2], div.google[_ngcontent-c2]{background-color:#dc4535}a.google[_ngcontent-c2], h1.google[_ngcontent-c2], h2.google[_ngcontent-c2], h3.google[_ngcontent-c2], i.google[_ngcontent-c2], label.google[_ngcontent-c2], p.google[_ngcontent-c2], span.google[_ngcontent-c2]{color:#dc4535}button.linkedin[_ngcontent-c2], div.linkedin[_ngcontent-c2]{background-color:#025a84}a.linkedin[_ngcontent-c2], h1.linkedin[_ngcontent-c2], h2.linkedin[_ngcontent-c2], h3.linkedin[_ngcontent-c2], i.linkedin[_ngcontent-c2], label.linkedin[_ngcontent-c2], p.linkedin[_ngcontent-c2], span.linkedin[_ngcontent-c2]{color:#025a84}.std-sh-panel-container[_ngcontent-c2]   .fx-button[_ngcontent-c2]   i[_ngcontent-c2]{font-size:22px;color:#fff}.std-sh-panel-container[_ngcontent-c2]   label[_ngcontent-c2]{display:none}.std-sh-panel-container[_ngcontent-c2]   .ss-button-container[_ngcontent-c2]{display:inline-block;margin-left:20px}.std-sh-panel-container[_ngcontent-c2]   .ss-button-container[_ngcontent-c2]:first-child{margin-left:0}.tb-container[_ngcontent-c2]{width:100%;height:40px;line-height:40px;display:-webkit-box;display:-ms-flexbox;display:flex;background-color:#e4e4e4;transition:opacity .1s ease,-webkit-transform .1s ease;transition:transform .1s ease,opacity .1s ease;transition:transform .1s ease,opacity .1s ease,-webkit-transform .1s ease;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0);opacity:.5;z-index:4;transition-delay:.2s}.tb-container[_ngcontent-c2]   .tb-sliding-panel[_ngcontent-c2] > *[_ngcontent-c2]{transition:opacity .3s ease}.tb-container[_ngcontent-c2]   .tb-sliding-panel[_ngcontent-c2]:hover   .tb-sliding-panel-children[_ngcontent-c2]{opacity:.5}.tb-container[_ngcontent-c2]   .tb-sliding-panel[_ngcontent-c2]:hover   .tb-sliding-panel-children[_ngcontent-c2]:hover{opacity:1}.tb-container[_ngcontent-c2]   .tb-sliding-panel-children[_ngcontent-c2] > *[_ngcontent-c2]{transition:opacity .3s ease}.tb-container[_ngcontent-c2]   .tb-sliding-panel[_ngcontent-c2]:hover   .tb-sliding-panel-children[_ngcontent-c2] > *[_ngcontent-c2]{opacity:.5}.tb-container[_ngcontent-c2]   .tb-sliding-panel[_ngcontent-c2]:hover   .tb-sliding-panel-children[_ngcontent-c2] > [_ngcontent-c2]:hover{opacity:1}.tb-container[_ngcontent-c2]   .thumbnail-carousel-content[_ngcontent-c2] > *[_ngcontent-c2]{transition:opacity .3s ease}.tb-container[_ngcontent-c2]   .thumbnail-carousel-content[_ngcontent-c2]:hover   .tci-link-item[_ngcontent-c2]{opacity:.5}.tb-container[_ngcontent-c2]   .thumbnail-carousel-content[_ngcontent-c2]:hover   .tci-link-item[_ngcontent-c2]:hover{opacity:1}.tb-container[_ngcontent-c2]   .tci-link-item[_ngcontent-c2] > *[_ngcontent-c2]{transition:opacity .3s ease}.tb-container[_ngcontent-c2]   .thumbnail-carousel-content[_ngcontent-c2]:hover   .tci-link-item[_ngcontent-c2] > *[_ngcontent-c2]{opacity:.5}.tb-container[_ngcontent-c2]   .thumbnail-carousel-content[_ngcontent-c2]:hover   .tci-link-item[_ngcontent-c2] > [_ngcontent-c2]:hover{opacity:1}.tb-container[_ngcontent-c2]:hover{opacity:1;transition-delay:0s}.tb-button[_ngcontent-c2]{padding-left:5px;padding-right:5px}.tb-button[_ngcontent-c2]   i[_ngcontent-c2]{font-size:1.6rem}.tb-btn-container.center[_ngcontent-c2]{-moz-flex-grow:1;-ms-flex-grow:1;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.std-app-container[_ngcontent-c2]:hover   .tb-container[_ngcontent-c2]{-webkit-transform:translateZ(0);transform:translateZ(0)}.std-tb-btn-count[_ngcontent-c2]{font-size:12px;color:#696969;position:relative;top:2px;left:-2px}</style><style>*[_ngcontent-c3]{margin:0;padding:0;border:0}h2[_ngcontent-c3]{font-size:18px}h2[_ngcontent-c3], h3[_ngcontent-c3]{font-weight:400}h3[_ngcontent-c3]{font-size:16px}.fx-center-all[_ngcontent-c3]{display:-webkit-box;display:-ms-flexbox;display:flex;-moz-justify-content:center;-ms-justify-content:center;-webkit-box-pack:center;justify-content:center;-ms-flex-pack:center;-moz-align-items:center;-ms-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.fx-center-horizontal-without-flex[_ngcontent-c3]{top:0;left:0;right:0;margin:0 auto;position:absolute}.fx-center-vertical[_ngcontent-c3]{display:-webkit-box;display:-ms-flexbox;display:flex;-moz-flex-direction:row;-ms-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;-moz-align-items:center;-ms-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.fx-center-without-flex[_ngcontent-c3]{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);left:50%;top:50%;position:absolute}.fx-left[_ngcontent-c3]{float:left;text-align:left}.fx-right[_ngcontent-c3]{float:right;text-align:right}.fx-center[_ngcontent-c3]{margin:0 auto;text-align:center}.fx-hidden[_ngcontent-c3]{display:none}.fx-invisible[_ngcontent-c3]{visibility:hidden}.fx-round[_ngcontent-c3], .std-sh-panel-container[_ngcontent-c3]   .fx-button[_ngcontent-c3]{border-radius:100%}.fx-floating[_ngcontent-c3]{position:absolute;z-index:1}.fx-padding[_ngcontent-c3]{padding:10px}.fx-margin[_ngcontent-c3]{margin:10px}.fx-margin-top-5[_ngcontent-c3]{margin-top:5px}.fx-margin-top-10[_ngcontent-c3]{margin-top:10px}.fx-padding-top-5[_ngcontent-c3]{padding-top:5px}.fx-margin-bottom-5[_ngcontent-c3]{margin-bottom:5px}.fx-margin-bottom-10[_ngcontent-c3]{margin-bottom:10px}.fx-margin-bottom-20[_ngcontent-c3]{margin-bottom:20px}.fx-padding-bottom-5[_ngcontent-c3]{padding-bottom:5px}.fx-padding-bottom-10[_ngcontent-c3]{padding-bottom:10px}.fx-no-padding[_ngcontent-c3]{padding:0}.fx-no-margin[_ngcontent-c3]{margin:0}.fx-no-float[_ngcontent-c3]{float:none}.fx-ellipsis[_ngcontent-c3]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.fx-cover[_ngcontent-c3], .fx-span-both[_ngcontent-c3]{height:100%;width:100%}.fx-span-width[_ngcontent-c3]{width:100%}.fx-span-height[_ngcontent-c3]{height:100%}.fx-cover[_ngcontent-c3]{position:absolute;overflow:hidden}.fx-fix-top[_ngcontent-c3]{top:0}.fx-fix-bottom[_ngcontent-c3]{bottom:0}.fx-fix-right[_ngcontent-c3]{right:0}.fx-fix-left[_ngcontent-c3]{left:0}.fx-fix-top-left[_ngcontent-c3]{top:0;left:0}.fx-fix-top-right[_ngcontent-c3]{top:0;right:0}.fx-overflow-hidden[_ngcontent-c3]{overflow:hidden}button.extra-light-grey[_ngcontent-c3], div.extra-light-grey[_ngcontent-c3]{background-color:#f2f2f2}a.extra-light-grey[_ngcontent-c3], h1.extra-light-grey[_ngcontent-c3], h2.extra-light-grey[_ngcontent-c3], h3.extra-light-grey[_ngcontent-c3], i.extra-light-grey[_ngcontent-c3], label.extra-light-grey[_ngcontent-c3], p.extra-light-grey[_ngcontent-c3], span.extra-light-grey[_ngcontent-c3]{color:#f2f2f2}button.light-grey[_ngcontent-c3], div.light-grey[_ngcontent-c3]{background-color:#e4e4e4}a.light-grey[_ngcontent-c3], h1.light-grey[_ngcontent-c3], h2.light-grey[_ngcontent-c3], h3.light-grey[_ngcontent-c3], i.light-grey[_ngcontent-c3], label.light-grey[_ngcontent-c3], p.light-grey[_ngcontent-c3], span.light-grey[_ngcontent-c3]{color:#e4e4e4}button.medium-grey[_ngcontent-c3], div.medium-grey[_ngcontent-c3]{background-color:#d8d8d8}a.medium-grey[_ngcontent-c3], h1.medium-grey[_ngcontent-c3], h2.medium-grey[_ngcontent-c3], h3.medium-grey[_ngcontent-c3], i.medium-grey[_ngcontent-c3], label.medium-grey[_ngcontent-c3], p.medium-grey[_ngcontent-c3], span.medium-grey[_ngcontent-c3]{color:#d8d8d8}button.grey[_ngcontent-c3], div.grey[_ngcontent-c3]{background-color:#a09f9f}a.grey[_ngcontent-c3], h1.grey[_ngcontent-c3], h2.grey[_ngcontent-c3], h3.grey[_ngcontent-c3], i.grey[_ngcontent-c3], label.grey[_ngcontent-c3], p.grey[_ngcontent-c3], span.grey[_ngcontent-c3]{color:#a09f9f}button.dark-grey[_ngcontent-c3], div.dark-grey[_ngcontent-c3]{background-color:#696969}a.dark-grey[_ngcontent-c3], h1.dark-grey[_ngcontent-c3], h2.dark-grey[_ngcontent-c3], h3.dark-grey[_ngcontent-c3], i.dark-grey[_ngcontent-c3], label.dark-grey[_ngcontent-c3], p.dark-grey[_ngcontent-c3], span.dark-grey[_ngcontent-c3]{color:#696969}button.crimson[_ngcontent-c3], div.crimson[_ngcontent-c3]{background-color:#f05758}a.crimson[_ngcontent-c3], h1.crimson[_ngcontent-c3], h2.crimson[_ngcontent-c3], h3.crimson[_ngcontent-c3], i.crimson[_ngcontent-c3], label.crimson[_ngcontent-c3], p.crimson[_ngcontent-c3], span.crimson[_ngcontent-c3]{color:#f05758}button.black[_ngcontent-c3], div.black[_ngcontent-c3]{background-color:#141414}a.black[_ngcontent-c3], h1.black[_ngcontent-c3], h2.black[_ngcontent-c3], h3.black[_ngcontent-c3], i.black[_ngcontent-c3], label.black[_ngcontent-c3], p.black[_ngcontent-c3], span.black[_ngcontent-c3]{color:#141414}button.yellow[_ngcontent-c3], div.yellow[_ngcontent-c3]{background-color:#faa72d}a.yellow[_ngcontent-c3], h1.yellow[_ngcontent-c3], h2.yellow[_ngcontent-c3], h3.yellow[_ngcontent-c3], i.yellow[_ngcontent-c3], label.yellow[_ngcontent-c3], p.yellow[_ngcontent-c3], span.yellow[_ngcontent-c3]{color:#faa72d}button.light-yellow[_ngcontent-c3], div.light-yellow[_ngcontent-c3]{background-color:#fdc977}a.light-yellow[_ngcontent-c3], h1.light-yellow[_ngcontent-c3], h2.light-yellow[_ngcontent-c3], h3.light-yellow[_ngcontent-c3], i.light-yellow[_ngcontent-c3], label.light-yellow[_ngcontent-c3], p.light-yellow[_ngcontent-c3], span.light-yellow[_ngcontent-c3]{color:#fdc977}button.blue[_ngcontent-c3], div.blue[_ngcontent-c3]{background-color:#1a7bb9}a.blue[_ngcontent-c3], h1.blue[_ngcontent-c3], h2.blue[_ngcontent-c3], h3.blue[_ngcontent-c3], i.blue[_ngcontent-c3], label.blue[_ngcontent-c3], p.blue[_ngcontent-c3], span.blue[_ngcontent-c3]{color:#1a7bb9}button.green[_ngcontent-c3], div.green[_ngcontent-c3]{background-color:#6da067}a.green[_ngcontent-c3], h1.green[_ngcontent-c3], h2.green[_ngcontent-c3], h3.green[_ngcontent-c3], i.green[_ngcontent-c3], label.green[_ngcontent-c3], p.green[_ngcontent-c3], span.green[_ngcontent-c3]{color:#6da067}button.white[_ngcontent-c3], div.white[_ngcontent-c3]{background-color:#fff}a.white[_ngcontent-c3], h1.white[_ngcontent-c3], h2.white[_ngcontent-c3], h3.white[_ngcontent-c3], i.white[_ngcontent-c3], label.white[_ngcontent-c3], p.white[_ngcontent-c3], span.white[_ngcontent-c3]{color:#fff}button.facebook[_ngcontent-c3], div.facebook[_ngcontent-c3]{background-color:#324b7f}a.facebook[_ngcontent-c3], h1.facebook[_ngcontent-c3], h2.facebook[_ngcontent-c3], h3.facebook[_ngcontent-c3], i.facebook[_ngcontent-c3], label.facebook[_ngcontent-c3], p.facebook[_ngcontent-c3], span.facebook[_ngcontent-c3]{color:#324b7f}button.twitter[_ngcontent-c3], div.twitter[_ngcontent-c3]{background-color:#339dc3}a.twitter[_ngcontent-c3], h1.twitter[_ngcontent-c3], h2.twitter[_ngcontent-c3], h3.twitter[_ngcontent-c3], i.twitter[_ngcontent-c3], label.twitter[_ngcontent-c3], p.twitter[_ngcontent-c3], span.twitter[_ngcontent-c3]{color:#339dc3}button.google[_ngcontent-c3], div.google[_ngcontent-c3]{background-color:#dc4535}a.google[_ngcontent-c3], h1.google[_ngcontent-c3], h2.google[_ngcontent-c3], h3.google[_ngcontent-c3], i.google[_ngcontent-c3], label.google[_ngcontent-c3], p.google[_ngcontent-c3], span.google[_ngcontent-c3]{color:#dc4535}button.linkedin[_ngcontent-c3], div.linkedin[_ngcontent-c3]{background-color:#025a84}a.linkedin[_ngcontent-c3], h1.linkedin[_ngcontent-c3], h2.linkedin[_ngcontent-c3], h3.linkedin[_ngcontent-c3], i.linkedin[_ngcontent-c3], label.linkedin[_ngcontent-c3], p.linkedin[_ngcontent-c3], span.linkedin[_ngcontent-c3]{color:#025a84}.std-sh-panel-container[_ngcontent-c3]   .fx-button[_ngcontent-c3]   i[_ngcontent-c3]{font-size:22px;color:#fff}.std-sh-panel-container[_ngcontent-c3]   label[_ngcontent-c3]{display:none}.std-sh-panel-container[_ngcontent-c3]   .ss-button-container[_ngcontent-c3]{display:inline-block;margin-left:20px}.std-sh-panel-container[_ngcontent-c3]   .ss-button-container[_ngcontent-c3]:first-child{margin-left:0}</style></head><body><app-root _nghost-c0="" ng-version="4.3.6"><div _ngcontent-c0="" class="std-app-container fx-cover">
+    
+    <!---->
+
+    <view-stack _ngcontent-c0="" buttonicon="boson-icon-back" buttonposition="fx-left"><div></div><std-diagram-viewer><div class="fx-cover" style="transform: translateX(0); transition: transform 300ms ease-out;">
+    <div class="fx-cover" style="background-color: rgb(255, 255, 255);">
+        <loading-indicator classstring="fx-center-all fx-cover fx-large" spinnerclass="fx-icon boson-icon-bulb"><div class="fx-center-all fx-cover fx-large">
+                    <!----></div></loading-indicator>
+
+        <!---->
+        
+        <!----><div class="">
+            <click-area class="fx-cover"><div class="interactive-area" wheelscroll="" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer;">
+        </div></click-area>
+
+            <diagram-canvas class="std-app-canvas fx-cover fx-center-all" style="background-color: rgb(255, 255, 255);"><div class="fx-fix-top-left fx-cover diagram-svg-container"><div style="-webkit-transform: matrix(0.6251,0,0,0.6251,58.4812,-11.9833) ;-moz-transform: matrix(0.6251,0,0,0.6251,58.4812,-11.9833) ;-ms-transform: matrix(0.6251,0,0,0.6251,58.4812,-11.9833) ;-o-transform: matrix(0.6251,0,0,0.6251,58.4812,-11.9833) ;transform: matrix(0.6251,0,0,0.6251,58.4812,-11.9833) ;-webkit-transform-origin: top left;-moz-transform-origin: top left;-ms-transform-origin: top left;-o-transform-origin: top left;-transform-origin: top left;transform-origin: top left;"><svg version="1.1" x="0" y="0" id="hrs30t1q3" diagram-revision="8" width="1015" height="1070" xmlns="http://www.w3.org/2000/svg" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xlink="http://www.w3.org/1999/xlink" style="background-color: transparent;"><g>
+  <g id="hrs30t1q-ko181" transform="translate(85,65)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.699999988079071)">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke:#5e5ca7;stroke-width:1.5;"></rect>
+    </g>
+    <text x="0" y="0" width="54" height="22" transform="translate(15.5,5.95)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Coach</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko166" transform="translate(405,65)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.699999988079071)">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke:#5e5ca7;stroke-width:1.5;"></rect>
+    </g>
+    <text x="0" y="0" width="60" height="22" transform="translate(17.45,5.95)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Umpire</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko165" transform="translate(755,70)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.699999988079071)">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke:#5e5ca7;stroke-width:1.5;"></rect>
+    </g>
+    <text x="0" y="0" width="55" height="22" transform="translate(22.5,5.95)">
+      <tspan x="6" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Series</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko169" transform="translate(5,100)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.75,0.699999988079071)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="41" height="22" transform="translate(17,5.95)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;text-decoration:underline;">C_Id</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko174" transform="translate(5,55)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.699999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="49" height="22" transform="translate(10.45,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Name</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko172" transform="translate(20,15)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="65" height="22" transform="translate(10,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Country</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko171" transform="translate(115,15)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.6000000238418579,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="41" height="22" transform="translate(9.5,-1.45)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">DOB</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko167" transform="translate(185,20)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8999999761581421,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="82" height="22" transform="translate(3.95,3.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Start_date</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko180" transform="translate(195,65)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="77" height="22" transform="translate(8.95,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">End_Date</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko178" transform="translate(360,15)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="65" height="22" transform="translate(10,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Country</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko164" transform="translate(460,10)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.699999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="49" height="22" transform="translate(10.45,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Name</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko179" transform="translate(540,30)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.6000000238418579,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="41" height="22" transform="translate(9.5,-1.45)">
+      <tspan x="6" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">DOB</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko168" transform="translate(545,65)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="78" height="22" transform="translate(3.5,3.5)">
+      <tspan x="5" y="18" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">#Matches</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko170" transform="translate(320,55)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.75,0.699999988079071)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="41" height="22" transform="translate(17,5.95)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;text-decoration:underline;">U_Id</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko173" transform="translate(883,27)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.699999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="49" height="22" transform="translate(10.45,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Name</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko175" transform="translate(935,95)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.75,0.699999988079071)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="40" height="22" transform="translate(17.5,5.95)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;text-decoration:underline;">S_Id</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko163" transform="translate(820,15)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.6499999761581421,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="43" height="22" transform="translate(10.95,-1.45)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">MOS</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko177" transform="translate(725,5)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.800000011920929,0.699999988079071)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="76" height="22" transform="translate(2,5.95)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">End_date</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko176" transform="translate(910,60)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8999999761581421,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="83" height="22" transform="translate(3.45,3.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Start_Date</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko213" transform="translate(576,279)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.0023808479309082,0.7888888716697693)">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke:#5e5ca7;stroke-width:1.5;"></rect>
+    </g>
+    <text x="0" y="0" width="53" height="22" transform="translate(23.6,8.2)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Match</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko221" transform="translate(156,274)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.699999988079071)">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke:#5e5ca7;stroke-width:1.5;"></rect>
+    </g>
+    <text x="0" y="0" width="47" height="22" transform="translate(23.95,5.95)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Team</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko218" transform="translate(271,334)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="47" height="22" transform="translate(19,3.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">#loss</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko215" transform="translate(41,249)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.800000011920929,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="76" height="22" transform="translate(2,3.5)">
+      <tspan x="3" y="18" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Low_Total</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko210" transform="translate(51,339)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.4333333671092987)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="45" height="22" transform="translate(20,-0.65)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Rank</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko220" transform="translate(31,299)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="65" height="22" transform="translate(10,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Country</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko204" transform="translate(286,294)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="78" height="22" transform="translate(3.5,3.5)">
+      <tspan x="6" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">#Matches</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko202" transform="translate(286,254)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="52" height="22" transform="translate(16.5,3.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">#Wins</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko206" transform="translate(241,214)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8999999761581421,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="47" height="22" transform="translate(21.45,3.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">#Ties</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko216" transform="translate(76,214)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="84" height="22" transform="translate(5.45,3.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">High_Total</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko225" transform="translate(71,374)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.6833333373069763,0.5571428537368774)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="39" height="22" transform="translate(14.65,2.4)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;text-decoration:underline;">T_Id</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko222" transform="translate(226,379)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="63" height="22" transform="translate(15.95,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Captain</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko209" transform="translate(681,229)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.6833333373069763,0.5571428537368774)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="44" height="22" transform="translate(12.15,2.4)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;text-decoration:underline;">M_Id</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko217" transform="translate(741,274)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="55" height="22" transform="translate(19.95,3.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Result</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko211" transform="translate(451,294)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8999999761581421,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="42" height="22" transform="translate(23.95,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Date</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko212" transform="translate(481,344)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8999999761581421,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="44" height="22" transform="translate(22.95,-1.45)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Mom</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko201" transform="translate(706,324)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8999999761581421,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="43" height="22" transform="translate(23.45,3.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Toss</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko224" transform="translate(461,234)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.12248957157135,0.6439060568809509)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="96" height="22" transform="translate(8.1,4.55)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Batting First</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko207" transform="translate(731,474)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.699999988079071)">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke:#5e5ca7;stroke-width:1.5;"></rect>
+    </g>
+    <text x="0" y="0" width="66" height="22" transform="translate(14.45,5.95)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Stadium</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko205" transform="translate(775,545)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="49" height="22" transform="translate(22.95,3.5)">
+      <tspan x="5" y="18" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Name</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko214" transform="translate(861,479)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="65" height="22" transform="translate(10,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Country</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko208" transform="translate(831,444)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="48" height="22" transform="translate(26,3.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Place</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko219" transform="translate(841,514)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.6000000238418579)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="69" height="22" transform="translate(8,3.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Capacity</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko203" transform="translate(786,404)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.75,0.699999988079071)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="45" height="22" transform="translate(15,5.95)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;text-decoration:underline;">St_Id</tspan>
+    </text>
+  </g>
+  <g id="hrs30t1q-ko223" transform="translate(261,524)">
+    <desc>root/uml/er/relationship?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,1.100000023841858)">
+      <polygon vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" points="100,25 50,50 0,25 50,0 " style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></polygon>
+    </g>
+    <text x="0" y="0" width="88" height="22" transform="translate(6,16)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Score Card</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko251" transform="translate(115,500)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="50" height="22" transform="translate(22.45,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;text-decoration:underline;">SC_id</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko252" transform="translate(110,540)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.100000023841858,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="103" height="22" transform="translate(3.5,-1.45)">
+      <tspan x="6" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Runs_scored</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko253" transform="translate(120,570)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.0499999523162842,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="95" height="22" transform="translate(4.95,-1.45)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Balls_Faced</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko254" transform="translate(135,600)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="53" height="22" transform="translate(20.95,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">sixers</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko255" transform="translate(150,640)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8495941162109375,0.3756858706474304)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="51" height="22" transform="translate(16.95,-2.1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Fours</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko256" transform="translate(345,430)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.2000000476837158,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="103" height="22" transform="translate(8.5,-1.45)">
+      <tspan x="6" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Balls_bowled</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko257" transform="translate(375,455)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.4501992031872506,0.5555555555555556)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="124" height="22" transform="translate(10.5,2.35)">
+      <tspan x="6" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Runs_conceede</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko258" transform="translate(425,500)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.950199203187251,0.5555555555555556)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="91" height="22" transform="translate(2,2.35)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Wkts_taken</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko259" transform="translate(440,565)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.0497894287109375,0.3756858706474304)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="70" height="22" transform="translate(17.45,-2.1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Maidens</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko260" transform="translate(415,595)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.0499999523162842,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="76" height="22" transform="translate(14.45,-1.45)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Out_style</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko261" transform="translate(340,650)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.0499999523162842,0.4333333671092987)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="82" height="22" transform="translate(11.45,-0.65)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Out_bwler</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko262" transform="translate(410,625)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="93" height="22" transform="translate(3.5,-1.45)">
+      <tspan x="6" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Out_Fielder</tspan>
+    </text>
+  </g>
+  <g id="Entity-hrs88g2p-ko263" transform="translate(400,765)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.699999988079071)">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke:#5e5ca7;stroke-width:1.5;"></rect>
+    </g>
+    <text x="0" y="0" width="53" height="22" transform="translate(23.5,5.95)">
+      <tspan x="6" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Player</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko264" transform="translate(535,735)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="40" height="22" transform="translate(27.45,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;text-decoration:underline;">P_id</tspan>
+    </text>
+  </g>
+  <g id="hrs88g2p-ko265" transform="translate(525,805)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.4333333671092987)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="49" height="22" transform="translate(22.95,-0.65)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Name</tspan>
+    </text>
+  </g>
+  <g id="hrs88g2p-ko267" transform="translate(570,770)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8500000238418579,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="65" height="22" transform="translate(10,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Country</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko269" transform="translate(275,800)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="56" height="22" transform="translate(22,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Height</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko270" transform="translate(270,735)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="41" height="22" transform="translate(29.5,-1.45)">
+      <tspan x="6" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">DOB</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko271" transform="translate(205,765)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.100000023841858,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="92" height="22" transform="translate(9,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Debut_Date</tspan>
+    </text>
+  </g>
+  <g id="Entity-hrs88g2p-ko272" transform="translate(265,940)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.0499999523162842,0.7666667103767395)">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke:#5e5ca7;stroke-width:1.5;"></rect>
+    </g>
+    <text x="0" y="0" width="70" height="22" transform="translate(17.45,7.65)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Batsman</tspan>
+    </text>
+  </g>
+  <g id="Entity-hrs88g2p-ko273" transform="translate(560,940)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.100000023841858,0.699999988079071)">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke:#5e5ca7;stroke-width:1.5;"></rect>
+    </g>
+    <text x="0" y="0" width="59" height="22" transform="translate(25.5,5.95)">
+      <tspan x="6" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Bowler</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko275" transform="translate(90,940)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="45" height="22" transform="translate(27.5,1)">
+      <tspan x="6" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Rank</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko276" transform="translate(100,910)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="54" height="22" transform="translate(20.45,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">#Runs</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko277" transform="translate(185,855)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="54" height="22" transform="translate(20.45,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Fifties</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko278" transform="translate(160,1000)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="79" height="22" transform="translate(7.95,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Hundreds</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko279" transform="translate(360,1015)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="54" height="22" transform="translate(23,-1.45)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Sixers</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko280" transform="translate(250,1015)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="51" height="22" transform="translate(24.5,-1.45)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Fours</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko281" transform="translate(110,970)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="95" height="22" transform="translate(2.5,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Balls_Faced</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko282" transform="translate(120,880)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="44" height="22" transform="translate(25.45,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Style</tspan>
+    </text>
+  </g>
+  <g id="hrs88g2p-ko283" transform="translate(615,855)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="45" height="22" transform="translate(27.5,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Rank</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko285" transform="translate(655,885)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.2000000476837158,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="104" height="22" transform="translate(8,-1.45)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Best_Figures</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko286" transform="translate(630,1045)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8495941162109375,0.3756858706474304)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="29" height="22" transform="translate(27.95,-2.1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">5w</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko287" transform="translate(705,985)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.949999988079071,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="65" height="22" transform="translate(14.95,-1.45)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Wickets</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko288" transform="translate(670,1015)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.2000000476837158,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="104" height="22" transform="translate(8,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Balls_Bowled</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko289" transform="translate(690,915)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.350000023841858,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="126" height="22" transform="translate(4.5,-1.45)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Runs_Conceded</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko290" transform="translate(705,945)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1.2999999523162842,0.5)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="103" height="22" transform="translate(13.45,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Balls_bowled</tspan>
+    </text>
+  </g>
+  <g id="Relationship-hrs88g2p-ko291" transform="translate(155,160)">
+    <desc>root/uml/er/relationship?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8999999761581421,0.6000000238418579)">
+      <polygon vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" points="100,25 50,50 0,25 50,0 " style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></polygon>
+    </g>
+    <text x="0" y="0" width="30" height="22" transform="translate(29.95,3.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">for</tspan>
+    </text>
+  </g>
+  <g id="Connector-hrs88g2p-ko292" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 305 250 L 306 334 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+    <g id="fromIcon" transform="translate(305,250) rotate(-0.6820603931726519)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+    </g>
+  </g>
+  <g id="Connector-hrs88g2p-ko293" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 305 220 L 235 160 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+    <g id="fromIcon" transform="translate(305,220) rotate(130.60129464500446)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+    </g>
+  </g>
+  <g id="Relationship-hrs88g2p-ko294" transform="translate(420,170)">
+    <desc>root/uml/er/relationship?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.550000011920929,0.5)">
+      <polygon vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" points="100,25 50,50 0,25 50,0 " style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></polygon>
+    </g>
+    <text x="0" y="0" width="30" height="22" transform="translate(12.5,1)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">BY</tspan>
+    </text>
+  </g>
+  <g id="Relationship-hrs88g2p-ko298" transform="translate(755,165)">
+    <desc>root/uml/er/relationship?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(1,0.6000000238418579)">
+      <polygon vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" points="100,25 50,50 0,25 50,0 " style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></polygon>
+    </g>
+    <text x="0" y="0" width="35" height="22" transform="translate(32.5,3.5)">
+      <tspan x="6" y="18" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">has</tspan>
+    </text>
+  </g>
+  <g id="Connector-hrs88g2p-ko299" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 910 255 L 730 255 L 731 339 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+    <g id="fromIcon" transform="translate(910,255) rotate(90)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+    </g>
+  </g>
+  <g id="Connector-hrs88g2p-ko300" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 910 225 L 910 165 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+    <g id="fromIcon" transform="translate(910,225) rotate(180)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+    </g>
+  </g>
+  <g id="Connector-hrs88g2p-ko301" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 555 255 L 695 255 L 696 334 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+    <g id="fromIcon" transform="translate(555,255) rotate(-90)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+    </g>
+  </g>
+  <g id="Connector-hrs88g2p-ko302" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 555 230 L 555 160 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+    <g id="fromIcon" transform="translate(555,230) rotate(180)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+    </g>
+  </g>
+  <g id="Relationship-hrs88g2p-ko303" transform="translate(595,475)">
+    <desc>root/uml/er/relationship?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.6000000238418579,0.699999988079071)">
+      <polygon vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" points="100,25 50,50 0,25 50,0 " style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></polygon>
+    </g>
+    <text x="0" y="0" width="24" height="22" transform="translate(18,5.95)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">At</tspan>
+    </text>
+  </g>
+  <g id="Connector-hrs88g2p-ko304" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 730 535 L 731 379 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+    <g id="fromIcon" transform="translate(730,535) rotate(-179.6327243926619)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+    </g>
+  </g>
+  <g id="Connector-hrs88g2p-ko305" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 760 550 L 836 549 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+    <g id="fromIcon" transform="translate(760,550) rotate(-90.75384833307078)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></line>
+    </g>
+  </g>
+  <g id="Key Attribute-hrs88g2p-ko306" transform="translate(650,40)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image" transform="scale(0.8999999761581421,0.4000000059604645)">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke:#5e5ca7;stroke-width:1.5;" stroke-width="1.5"></ellipse>
+    </g>
+    <text x="0" y="0" width="60" height="22" transform="translate(14.95,-1.45)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Winner</tspan>
+    </text>
+  </g>
+  <g id="Connector-hrs88g2p-ko308" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 370 1020 L 295 1015 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+  </g>
+  <g id="Connector-hrs88g2p-ko310" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 420 1000 L 335 940 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+  </g>
+  <g id="Connector-hrs88g2p-ko314" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 310 1060 L 375 1040 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+  </g>
+  <g id="Connector-hrs88g2p-ko315" transform="translate(-105,-60)">
+    <g id="graphics">
+      
+      <path d="M 405 1075 L 420 1040 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+  </g>
+<defs></defs></g></svg></div></div></diagram-canvas>
+
+            <indicators-layer><svg class="il-container"><desc>Created with Snap</desc><defs></defs><g style="opacity: 1;"><path d="M0,0 L750.4000244140625,0 L750.4000244140625,750.4000244140625 L0,750.4000244140625z 
+             M222.25979614257812,131.79209899902344 L222.25979614257812,180.54510307312012 L305.39331817626953,180.54510307312012 L305.39331817626953,131.79209899902344" fill="#aaaaaa" style="fill-rule: evenodd; fill-opacity: 0.3;"></path><path d="
+             M222.25979614257812, 141.79209899902344 
+             L222.25979614257812, 131.79209899902344
+             L232.25979614257812, 131.79209899902344
+             
+             M295.39331817626953, 131.79209899902344 
+             L305.39331817626953, 131.79209899902344
+             L305.39331817626953, 141.79209899902344
+             M305.39331817626953, 170.54510307312012 
+             L305.39331817626953, 180.54510307312012
+             L295.39331817626953, 180.54510307312012
+             
+             M232.25979614257812, 180.54510307312012 
+             L222.25979614257812, 180.54510307312012
+             L222.25979614257812, 170.54510307312012
+        " fill="none" stroke="#e56c1a" style="stroke-width: 2;"></path></g></svg></indicators-layer>
+
+            <app-toolbar _nghost-c1=""><div _ngcontent-c1="" class="tb-container fx-floating fx-fix-bottom">
+
+    <div _ngcontent-c1="" class="tb-btn-container tb-btn-container-left fx-no-float fx-left fx-span-height">
+        <!----><toolbar-button btnicon="boson-icon-links-thick blue" left="" _nghost-c2="" class="ng-tns-c2-4"><!---->
+
+<button _ngcontent-c2="" class="tb-button fx-button fx-icon fx-bg-transition">
+    <i _ngcontent-c2="" class="boson-icon-links-thick blue tbb-icon"><!----><span _ngcontent-c2="" class="std-tb-btn-count ng-tns-c2-4">1</span></i>
+    <!---->
+</button></toolbar-button>
+    </div>
+
+    <div _ngcontent-c1="" class="tb-btn-container tb-btn-container-center fx-center fx-span-height">
+        <toolbar-button btnicon="boson-icon-zoom-in" center="" class="tbb-zoom-in ng-tns-c2-0" tooltiptext="Zoom In" _nghost-c2=""><!---->
+
+<button _ngcontent-c2="" class="tb-button fx-button fx-icon fx-bg-transition">
+    <i _ngcontent-c2="" class="boson-icon-zoom-in tbb-icon"><!----></i>
+    <!---->
+</button></toolbar-button><toolbar-button btnicon="boson-icon-zoom-out" center="" class="tbb-zoom-out ng-tns-c2-1" tooltiptext="Zoom Out" _nghost-c2=""><!---->
+
+<button _ngcontent-c2="" class="tb-button fx-button fx-icon fx-bg-transition">
+    <i _ngcontent-c2="" class="boson-icon-zoom-out tbb-icon"><!----></i>
+    <!---->
+</button></toolbar-button><toolbar-button btnicon="boson-icon-zoom-100" center="" class="tbb-actual-size ng-tns-c2-2" tooltiptext="Actual Size" _nghost-c2=""><!---->
+
+<button _ngcontent-c2="" class="tb-button fx-button fx-icon fx-bg-transition">
+    <i _ngcontent-c2="" class="boson-icon-zoom-100 tbb-icon"><!----></i>
+    <!---->
+</button></toolbar-button><toolbar-button btnicon="boson-icon-fit-to-screen" center="" class="tbb-fit-to-screen ng-tns-c2-3" tooltiptext="Fit To Screen" _nghost-c2=""><!---->
+
+<button _ngcontent-c2="" class="tb-button fx-button fx-icon fx-bg-transition">
+    <i _ngcontent-c2="" class="boson-icon-fit-to-screen tbb-icon"><!----></i>
+    <!---->
+</button></toolbar-button><!----><toolbar-button btnicon="boson-icon-full-screen" center="" class="tbb-full-screen ng-tns-c2-5" tooltiptext="Full Screen" _nghost-c2=""><!---->
+
+<button _ngcontent-c2="" class="tb-button fx-button fx-icon fx-bg-transition">
+    <i _ngcontent-c2="" class="boson-icon-full-screen tbb-icon"><!----></i>
+    <!---->
+</button></toolbar-button><!---->
+    </div>
+
+    <div _ngcontent-c1="" class="tb-btn-container tb-btn-container-right fx-no-float fx-right fx-span-height">
+        <!----><toolbar-button btnicon="boson-icon-share-thick green" class="tbb-share ng-tns-c2-6" right="" _nghost-c2=""><!---->
+
+<button _ngcontent-c2="" class="tb-button fx-button fx-icon fx-bg-transition">
+    <i _ngcontent-c2="" class="boson-icon-share-thick green tbb-icon"><!----></i>
+    <!---->
+</button></toolbar-button><!---->
+    </div>
+
+</div></app-toolbar>
+        </div> 
+    </div>
+</div>
+
+<!---->
+</std-diagram-viewer>
+                <!----></view-stack>
+    
+</div>
+
+</app-root><script type="text/javascript" src="./inline.5027245262278c335951.bundle.js.download"></script><script type="text/javascript" src="./polyfills.a5df6df2cf72cdef99d2.bundle.js.download"></script><script type="text/javascript" src="./vendor.d801f2c039075b2bb436.bundle.js.download"></script><script type="text/javascript" src="./main.bf0dbf11ec501d857dee.bundle.js.download"></script></body></html>

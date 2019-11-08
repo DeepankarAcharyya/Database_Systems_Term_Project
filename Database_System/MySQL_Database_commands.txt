@@ -16,7 +16,7 @@ CREATE TABLE PLAYER(
 
 CREATE TABLE Bio_Details(
     Player_ID VARCHAR(8) PRIMARY KEY,
-    DOB       DATE not null DEFAULT GETDATE(),
+    DOB       DATE DEFAULT GETDATE(),
     Height    float(5,2) not null DEFAULT 0.00,
     Weight    float(4,2) not null DEFAULT 0.00,
     Age       INT(2) not null DEFAULT 18
@@ -36,6 +36,7 @@ CREATE TABLE Game_Data_Batting(
 )
 
 CREATE TABLE Game_Data_Bowling(
+    Player_ID       VARCHAR(8) PRIMARY KEY,
     No_of_Matches   INT(5) not null DEFAULT 0,
     Balls_Bowled    INT(8) not null DEFAULT 0,
     Runs_Conceded   INT(8) not null DEFAULT 0,
@@ -46,28 +47,28 @@ CREATE TABLE Game_Data_Bowling(
 )
 
 CREATE TABLE Umpires(
-    Umpire_ID                   VARCHAR(8)
+    Umpire_ID                   VARCHAR(8) PRIMARY KEY,
     Name                        VARCHAR(20) not null,
     Location_of_Origin          VARCHAR(10) not null,
     Experience                  FLOAT(4,2) DEFAULT 0.0
 )
 
 CREATE TABLE Team(
-    Team_Name                   VARCHAR(8) not null
+    Team_Name                   VARCHAR(8) PRIMARY KEY,
     Team_Captain                VARCHAR(20) not null,
     Team_Coach                  VARCHAR(20) not null,
     Location                    VARCHAR(10) not null,
-    No_of_Batsman               INT
-    No_of_Bowlers               INT
-    No_of_WicketKeepers         INT
-    No_of_AllRounders           INT
+    No_of_Batsman               INT(2) DEFAULT 1,
+    No_of_Bowlers               INT(2) DEFAULT 1,
+    No_of_WicketKeepers         INT(1) DEFAULT 1,
+    No_of_AllRounders           INT(1) DEFAULT 1
 )
 
 CREATE TABLE Stadium(
-    Stadium_ID              VARCHAR(10) 
+    Stadium_ID              VARCHAR(10) PRIMARY KEY,
     Name                    VARCHAR(20) not null,
-    Area                    FLOAT
-    Pitch_type              VARCHAR
+    Area                    FLOAT(8,2) not null,
+    Pitch_type              VARCHAR(10) not null,
     Location                VARCHAR(10) not null
 )
 
@@ -75,7 +76,7 @@ CREATE TABLE Match(
     Match_ID            VARCHAR(8) PRIMARY KEY,
     Match_Date          DATE DEFAULT GETDATE(),
     Match_Time          TIME not null,
-    Stadium_ID          VARCHAR(10) 
+    Stadium_ID          VARCHAR(10) not null,
     Team1               VARCHAR(8) not null,
     Team2               VARCHAR(8) not null,
     Toss_Team           VARCHAR(8) not null,
@@ -86,26 +87,28 @@ CREATE TABLE Match(
 )
 
 CREATE TABLE Bowl_Stats(
-    Player_ID           VARCHAR(8)
-    Match_ID            VARCHAR(8)
+    Player_ID           VARCHAR(8),
+    Match_ID            VARCHAR(8),
     Overs               INT(3) DEFAULT 0,
     Maiden_Overs        INT(3) DEFAULT 0,
     Wickets             INT(2) DEFAULT 0,
     No_Balls            INT(3) DEFAULT 0,
     Wide_Balls          INT(3) DEFAULT 0,
-    Innings_No          INT(1) DEFAULT 1
+    Innings_No          ENUM ('1','2') DEFAULT '1',
+    PRIMARY KEY (Player_ID,Match_ID)
 )
 
 CREATE TABLE Bat_Stats(
-    Player_ID           VARCHAR(8)
-    Match_ID            VARCHAR(8)
+    Player_ID           VARCHAR(8),
+    Match_ID            VARCHAR(8),
     Runs                INT(8) DEFAULT 0,
     SR                  float(4,2) DEFAULT 0.0,
     4s                  INT(5) DEFAULT 0,
     6s                  INT(5) DEFAULT 0,
     Extras              INT(5) DEFAULT 0,
     Current_Status      VARCHAR(20),
-    Innings_No          INT(1) DEFAULT 1
+    Innings_No          ENUM ('1','2') DEFAULT '1',
+    PRIMARY KEY (Player_ID,Match_ID)
 )
 
 

@@ -46,66 +46,66 @@ CREATE TABLE Game_Data_Bowling(
 )
 
 CREATE TABLE Umpires(
-    Umpire_ID
-    Name
-    Location_of_Origin
-    Experience
+    Umpire_ID                   VARCHAR(8)
+    Name                        VARCHAR(20) not null,
+    Location_of_Origin          VARCHAR(10) not null,
+    Experience                  FLOAT(4,2) DEFAULT 0.0
 )
 
 CREATE TABLE Team(
-    Team_Name
-    Team_Captain
-    Team_Coach
-    Location
-    No_of_Batsman
-    No_of_Bowlers
-    No_of_WicketKeepers
-    No_of_AllRounders
+    Team_Name                   VARCHAR(8) not null
+    Team_Captain                VARCHAR(20) not null,
+    Team_Coach                  VARCHAR(20) not null,
+    Location                    VARCHAR(10) not null,
+    No_of_Batsman               INT
+    No_of_Bowlers               INT
+    No_of_WicketKeepers         INT
+    No_of_AllRounders           INT
 )
 
 CREATE TABLE Stadium(
-    Stadium_ID
-    Name
-    Area
-    Pitch_type
-    Location
+    Stadium_ID              VARCHAR(10) 
+    Name                    VARCHAR(20) not null,
+    Area                    FLOAT
+    Pitch_type              VARCHAR
+    Location                VARCHAR(10) not null
 )
 
 CREATE TABLE Match(
-    Match_ID
-    Match_Date
-    Match_Time
-    Stadium_ID
-    Team1
-    Team2
-    Toss_Team
-    Toss_Decision
-    Leg_Umpire
-    Straight_Umpire
-    Third_Umpire
+    Match_ID            VARCHAR(8) PRIMARY KEY,
+    Match_Date          DATE DEFAULT GETDATE(),
+    Match_Time          TIME not null,
+    Stadium_ID          VARCHAR(10) 
+    Team1               VARCHAR(8) not null,
+    Team2               VARCHAR(8) not null,
+    Toss_Team           VARCHAR(8) not null,
+    Toss_Decision       varchar(10) not null,
+    Leg_Umpire          VARCHAR(20) not null,
+    Straight_Umpire     VARCHAR(20) not null,
+    Third_Umpire        VARCHAR(20) not null
 )
 
 CREATE TABLE Bowl_Stats(
-    Player_ID
-    Match_ID
-    Overs
-    Maiden_Overs
-    Wickets
-    No_Balls
-    Wide_Balls
-    Innings_No
+    Player_ID           VARCHAR(8)
+    Match_ID            VARCHAR(8)
+    Overs               INT(3) DEFAULT 0,
+    Maiden_Overs        INT(3) DEFAULT 0,
+    Wickets             INT(2) DEFAULT 0,
+    No_Balls            INT(3) DEFAULT 0,
+    Wide_Balls          INT(3) DEFAULT 0,
+    Innings_No          INT(1) DEFAULT 1
 )
 
 CREATE TABLE Bat_Stats(
-    Player_ID
-    Match_ID
-    Runs
-    SR
-    4s
-    6s
-    Extras
-    Current_Status
-    Innings_No    
+    Player_ID           VARCHAR(8)
+    Match_ID            VARCHAR(8)
+    Runs                INT(8) DEFAULT 0,
+    SR                  float(4,2) DEFAULT 0.0,
+    4s                  INT(5) DEFAULT 0,
+    6s                  INT(5) DEFAULT 0,
+    Extras              INT(5) DEFAULT 0,
+    Current_Status      VARCHAR(20),
+    Innings_No          INT(1) DEFAULT 1
 )
 
 

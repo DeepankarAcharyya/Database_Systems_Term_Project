@@ -1,0 +1,113 @@
+//commands for making the MySQL tables
+
+CREATE DATABASE CRICKET_DBMS;
+
+use CRICKET_DBMS;
+
+CREATE TABLE PLAYER(
+	Name              VARCHAR(20) not null,
+    Player_ID         VARCHAR(8) PRIMARY KEY,
+    Country_of_Origin VARCHAR(10) not null,
+    No_of_Dismissals  INT(3) DEFAULT 0,
+    Team              VARCHAR(8) not null,
+    Position          VARCHAR(10) not null,
+    Debut_Date        DATE not null DEFAULT GETDATE()
+)
+
+CREATE TABLE Bio_Details(
+    Player_ID VARCHAR(8) PRIMARY KEY,
+    DOB       DATE not null DEFAULT GETDATE(),
+    Height    float(5,2) not null DEFAULT 0.00,
+    Weight    float(4,2) not null DEFAULT 0.00,
+    Age       INT(2) not null DEFAULT 18
+)
+
+CREATE TABLE Game_Data_Batting(
+    Player_ID     VARCHAR(8) PRIMARY KEY,
+    No_of_Matches INT(5) not null DEFAULT 0,
+    Total_Runs    INT(8) not null DEFAULT 0,
+    Balls_Faced   INT(8) not null DEFAULT 0,
+    Average       float(5,2) not null DEFAULT 0.0,
+    SR            float(4,2) not null DEFAULT 0.0,
+    100s          INT(5) DEFAULT 0,
+    50s           INT(5) DEFAULT 0,
+    4s            INT(5) DEFAULT 0,
+    6s            INT(5) DEFAULT 0
+)
+
+CREATE TABLE Game_Data_Bowling(
+    No_of_Matches   INT(5) not null DEFAULT 0,
+    Balls_Bowled    INT(8) not null DEFAULT 0,
+    Runs_Conceded   INT(8) not null DEFAULT 0,
+    Wickets         INT(3) DEFAULT 0,
+    Economy         float(4,2) not null DEFAULT 0.0,
+    Average         float(5,2) not null DEFAULT 0.0,
+    Style           VARCHAR(10)
+)
+
+CREATE TABLE Umpires(
+    Umpire_ID
+    Name
+    Location_of_Origin
+    Experience
+)
+
+CREATE TABLE Team(
+    Team_Name
+    Team_Captain
+    Team_Coach
+    Location
+    No_of_Batsman
+    No_of_Bowlers
+    No_of_WicketKeepers
+    No_of_AllRounders
+)
+
+CREATE TABLE Stadium(
+    Stadium_ID
+    Name
+    Area
+    Pitch_type
+    Location
+)
+
+CREATE TABLE Match(
+    Match_ID
+    Match_Date
+    Match_Time
+    Stadium_ID
+    Team1
+    Team2
+    Toss_Team
+    Toss_Decision
+    Leg_Umpire
+    Straight_Umpire
+    Third_Umpire
+)
+
+CREATE TABLE Bowl_Stats(
+    Player_ID
+    Match_ID
+    Overs
+    Maiden_Overs
+    Wickets
+    No_Balls
+    Wide_Balls
+    Innings_No
+)
+
+CREATE TABLE Bat_Stats(
+    Player_ID
+    Match_ID
+    Runs
+    SR
+    4s
+    6s
+    Extras
+    Current_Status
+    Innings_No    
+)
+
+
+//Commands for adding the primary keys
+//commands for adding foreign keys

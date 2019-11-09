@@ -5,7 +5,7 @@ CREATE DATABASE CRICKET_DBMS;
 use CRICKET_DBMS;
 
 CREATE TABLE PLAYER(
-	Name              VARCHAR(20) not null,
+	Name          VARCHAR(20) not null,
     Player_ID         VARCHAR(8) PRIMARY KEY,
     Country_of_Origin VARCHAR(10) not null,
     No_of_Dismissals  INT(3) DEFAULT 0,

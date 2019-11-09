@@ -1,4 +1,4 @@
-<?php
+ <?php
  //credentials
  $servername= "localhost";
  $username="CSB17017@35";
@@ -11,8 +11,7 @@
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
-echo "Connected successfully";
- 
-echo "Closing the connection!";
-$connection->close();
+//echo "Connected successfully";
+//echo "Closing the connection!";
+//$connection->close();
  ?>

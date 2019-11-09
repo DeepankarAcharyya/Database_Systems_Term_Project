@@ -1,11 +1,48 @@
-<!doctype html>
 <html>
+
 <head>
   <title>ScoreCard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 
 <body>
+    <h1 allign="center">Score Card</h1>
+    <br>
+    <table class="table">
+        <thead>
+        <tr><th>Match Info</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Match</th>
+        </tr>
+        <tr>
+            <th>Match ID</th>
+        </tr>
+        <tr>
+            <th>Toss</th>
+        </tr>
+        <tr>
+            <th>Time</th>
+        </tr>
+        <tr>
+            <th>Venue</th>
+        </tr>
+        <tr>
+            <th>Umpires</th>
+        </tr>
+        <tr>
+            <th>Date</th>
+       </tr>
+       <tr>
+            <th>Team1</th>
+        </tr>
+        <tr>
+            <th>Team2</th>
+        </tr>
+    </tbody>
+    </table>
+
     <br>
     
     <table class="table">

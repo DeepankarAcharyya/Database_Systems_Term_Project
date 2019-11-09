@@ -11,19 +11,21 @@ CREATE TABLE PLAYER(
     No_of_Dismissals  INT(3) DEFAULT 0,
     Team              VARCHAR(8) REFERENCES Team(Team_Name),
     Position          VARCHAR(10) not null,
-    Debut_Date        DATE not null DEFAULT GETDATE()
+    Debut_Date        DATE not null DEFAULT CURRENT_TIMESTAMP
 )
 
 CREATE TABLE Bio_Details(
-    Player_ID VARCHAR(8) PRIMARY KEY FOREIGN KEY REFERENCES PLAYER(Player_ID),
-    DOB       DATE DEFAULT GETDATE(),
+    Player_ID VARCHAR(8) PRIMARY KEY ,
+    FOREIGN KEY(Player_ID) REFERENCES PLAYER(Player_ID),
+    DOB       DATE  DEFAULT CURRENT_TIMESTAMP,
     Height    float(5,2) not null DEFAULT 0.00,
     Weight    float(4,2) not null DEFAULT 0.00,
     Age       INT(2) not null DEFAULT 18
 )
 
 CREATE TABLE Game_Data_Batting(
-    Player_ID     VARCHAR(8) PRIMARY KEY FOREIGN KEY REFERENCES PLAYER(Player_ID),
+    Player_ID     VARCHAR(8) PRIMARY KEY,
+     FOREIGN KEY(Player_ID) REFERENCES PLAYER(Player_ID),
     No_of_Matches INT(5) not null DEFAULT 0,
     Total_Runs    INT(8) not null DEFAULT 0,
     Balls_Faced   INT(8) not null DEFAULT 0,
@@ -35,8 +37,10 @@ CREATE TABLE Game_Data_Batting(
     6s            INT(5) DEFAULT 0
 )
 
+
 CREATE TABLE Game_Data_Bowling(
-    Player_ID       VARCHAR(8) PRIMARY KEY FOREIGN KEY REFERENCES PLAYER(Player_ID),
+    Player_ID       VARCHAR(8) PRIMARY KEY ,
+    FOREIGN KEY(Player_ID) REFERENCES PLAYER(Player_ID),
     No_of_Matches   INT(5) not null DEFAULT 0,
     Balls_Bowled    INT(8) not null DEFAULT 0,
     Runs_Conceded   INT(8) not null DEFAULT 0,
@@ -72,9 +76,9 @@ CREATE TABLE Stadium(
     Location                VARCHAR(10) not null
 )
 
-CREATE TABLE Match(
+CREATE TABLE Matches(
     Match_ID            VARCHAR(8) PRIMARY KEY,
-    Match_Date          DATE DEFAULT GETDATE(),
+    Match_Date          DATE DEFAULT CURRENT_TIMESTAMP,
     Match_Time          TIME not null,
     Stadium_ID          VARCHAR(10) REFERENCES Stadium(Stadium_ID),
     Team1               VARCHAR(8) REFERENCES Team(Team_Name),
@@ -83,13 +87,12 @@ CREATE TABLE Match(
     Toss_Decision       varchar(10) not null,
     Leg_Umpire          VARCHAR(20) REFERENCES Umpires(Umpire_ID),
     Straight_Umpire     VARCHAR(20) REFERENCES Umpires(Umpire_ID),
-    Third_Umpire        VARCHAR(20) REFERENCES Umpires(Umpire_ID),
-    FOREIGN KEY (Stadium_ID) REFERENCES Stadium(Stadium_ID)
+    Third_Umpire        VARCHAR(20) REFERENCES Umpires(Umpire_ID)
 )
 
 CREATE TABLE Bowl_Stats(
-    Player_ID           VARCHAR(8) FOREIGN KEY REFERENCES PLAYER(Player_ID),
-    Match_ID            VARCHAR(8) FOREIGN KEY REFERENCES Match(Match_ID),
+    Player_ID           VARCHAR(8) REFERENCES PLAYER(Player_ID),
+    Match_ID            VARCHAR(8) REFERENCES Matches(Match_ID),
     Overs               INT(3) DEFAULT 0,
     Maiden_Overs        INT(3) DEFAULT 0,
     Wickets             INT(2) DEFAULT 0,
@@ -100,8 +103,8 @@ CREATE TABLE Bowl_Stats(
 )
 
 CREATE TABLE Bat_Stats(
-    Player_ID           VARCHAR(8) FOREIGN KEY REFERENCES PLAYER(Player_ID),
-    Match_ID            VARCHAR(8) FOREIGN KEY REFERENCES Match(Match_ID),
+    Player_ID           VARCHAR(8) REFERENCES PLAYER(Player_ID),
+    Match_ID            VARCHAR(8) REFERENCES Matches(Match_ID),
     Runs                INT(8) DEFAULT 0,
     SR                  float(4,2) DEFAULT 0.0,
     4s                  INT(5) DEFAULT 0,

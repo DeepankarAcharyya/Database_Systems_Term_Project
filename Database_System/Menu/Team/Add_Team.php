@@ -5,7 +5,7 @@
     </head>
     <body>
         Enter Team Details
-        <form class="form-signin" action="add_team_process.php" method="POST">
+        <form class="form-signin" action="add_Team_process.php" method="POST">
             
             <th>Team Name: </th><input type="text" name="name">
             <br><br>

@@ -19,7 +19,7 @@ if(isset($_POST['Delete_Team'])){
     $id=$_POST['team'];
     
     //forming mysql commands
-    $sql1="DELETE FROM Team where Team_Name={$id}";
+    $sql1="DELETE FROM Team where Team_Name='{$id}'";
     if($connection->query($sql1)==TRUE){
         echo "record removed successfully";
         header("Location:Index.php");

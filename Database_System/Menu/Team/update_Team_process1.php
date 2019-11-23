@@ -19,7 +19,7 @@ if(isset($_POST['Search_Team'])){
     $id=$_POST['team_name'];
     
     //forming mysql commands
-    $sql1="SELECT * FROM Team where Team_Name={$id}";
+    $sql1="SELECT * FROM Team where Team_Name='{$id}'";
     $result1=$connection->query($sql1);
     if(!$result1){
         echo "Error: " . $sql1 . "<br>" . $connection->error;
@@ -44,7 +44,7 @@ if(isset($_POST['Search_Team'])){
     </head>
     <body>
         Update Stadium Details
-        <form class="form-signin" action="Update_Stadium2.php" method="POST">
+        <form class="form-signin" action="Update_Team2.php" method="POST">
             <th>Team: </th><input type="text" name="Name" value=<?php echo $row1['Team_Name'] ?> readonly="readonly">
             <br><br>
             <th>Captain : </th><input type="text" name="captain" value=<?php echo $row1['Team_Captain'] ?> required>

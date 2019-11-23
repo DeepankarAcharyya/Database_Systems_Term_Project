@@ -1,4 +1,6 @@
 <?php
+
+//problem with the update
  //credentials
  $servername= "localhost";
  $username="CSB17017@35";
@@ -26,7 +28,7 @@ if(isset($_POST['Update_Team'])){
     $all_rounder=$_POST['all_rounders'];
 
     //forming mysql commands
-    $sql1="UPDATE Team set Team_Captain={$captain},Team_Coach={$coach},Location={$location},No_of_Batsman={$batsman},No_of_Bowlers={$bowler},No_of_WicketKeepers={$wicket_keeper},No_of_AllRounders={$all_rounder}  where Team_Name={$team} ";
+    $sql1="UPDATE Team set Team_Captain='{$captain}',Team_Coach='{$coach}',Location='{$location}',No_of_Batsman={$batsman},No_of_Bowlers={$bowler},No_of_WicketKeepers={$wicket_keeper},No_of_AllRounders={$all_rounder}  where Team_Name='{$team}' ";
     if($connection->query($sql1)==FALSE){
         echo "Record Updation Error!".$connection->error;
     }

@@ -1,0 +1,6 @@
+to be done:
+    brushing up the front end part
+    add umpire back end---------------------------Done
+    update info be--------------------------------Done
+    delete umpire be------------------------------Done
+    Operation message confirmation

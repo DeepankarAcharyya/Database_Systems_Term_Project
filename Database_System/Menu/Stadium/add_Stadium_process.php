@@ -13,26 +13,28 @@ if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
 
-if(isset($_POST['Update_Stadium'])){
+if(isset($_POST['Add_Stadium'])){
 
     //extracting the values
-    $id=$_POST['ID'];
+
+    $id=$_POST['Stadium_ID'];
     $name=$_POST['Name'];
     $location=$_POST['Location'];
-    $pitch=$_POST['Pitch'];
     $area=$_POST['Area'];
-    
+    $pitch=$_POST['Pitch_Type'];
+
     //forming mysql commands
-    $sql1="UPDATE Stadium set Name='{$name}',Location='{$location}',Pitch_type={$pitch},Area={$area}  where Stadium_ID={$id} ";
-    if($connection->query($sql1)==FALSE){
-        echo "Record Updation Error!".$connection->error;
+    $sql1="INSERT INTO Stadium values ({$id},'{$name}',{$area},'{$pitch}','{$location}')";
+    if($connection->query($sql1)==TRUE){
+        echo "New record created successfully";
+        header("Location:Index.php");
+        $connection->close();
+        exit;
     }
     else{
-        echo "Record Updated Successfully!";
-        }
+        echo "Error: " . $sql1 . "<br>" . $connection->error;
+        $connection->close();
+    }
 }
-$connection->close();
 
-header("Location:Index.php");
-exit;
-?>
+ ?>

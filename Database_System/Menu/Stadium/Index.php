@@ -5,13 +5,13 @@
     </head>
     <body>
         <form action="Add_Stadium.php">
-            <button type="button" class="btn btn-primary">ADD NEW STADIUM</button>
+            <button type="submit" class="btn btn-primary">ADD NEW STADIUM</button>
         </form>
         <form action="Update_Stadium1.php">
-            <button type="button" class="btn btn-warning">UPDATE STADIUM's INFO</button>
+            <button type="submit" class="btn btn-warning">UPDATE STADIUM's INFO</button>
         </form>
         <form action="Delete_Stadium.php">
-            <button type="button" class="btn btn-danger">DELETE STADIUM</button>
+            <button type="submit" class="btn btn-danger">DELETE STADIUM</button>
         </form>
     </body>
 </html>

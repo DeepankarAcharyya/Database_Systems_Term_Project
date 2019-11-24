@@ -1,4 +1,5 @@
 <?php
+include 'match_global.php';
  //credentials
  $servername= "localhost";
  $username="CSB17017@35";
@@ -43,8 +44,8 @@ if(isset($_POST['Next1'])){
 
     //forming mysql commands
     $sql1="INSERT INTO Match values ({$match_ID},'{$date}','{$time}','{$location}','{$team1}','{$team2}','{$toss_team}','{$toss_decision}','{$leg_umpire}','{$st_umpire}','$third_umpire')";
-    $sql_bowl1="SELECT Name FROM Player where Team='{$team1}' and Position='Bowler' or Position='All_Rounder'";
-    $sql_bowl2="SELECT Name FROM Player where Team='{$team2}' and Position='Bowler' or Position='All_Rounder'";
+    $sql_bowl1="SELECT Name,Player_ID FROM Player where Team='{$team1}' and Position='Bowler' or Position='All_Rounder'";
+    $sql_bowl2="SELECT Name,Player_ID FROM Player where Team='{$team2}' and Position='Bowler' or Position='All_Rounder'";
     
     if($connection->query($sql1)==TRUE){
         echo "New record created successfully";
@@ -76,11 +77,18 @@ $connection->close();
     <br>
 
     <form class="form-signin" action="Add_Match2_process.php" method="POST">
+    
+    <!--hidden attributes-->
+    <input type="hidden" name="match_id" value="<?php echo $match_ID; ?>">
+    <input type="hidden" name="first" value="<?php echo $first; ?>">
+    <input type="hidden" name="second" value="<?php echo $second; ?>">
+    
     <h2>Team:<?php echo $first ?> </h2>    
     <table class="table">
         <thead>
             <tr><th>Bowler</th></tr>
         <tr>
+            <th>ID</th>
             <th>Bowler</th>
             <th>Overs</th>
             <th>Maidens</th>
@@ -91,18 +99,21 @@ $connection->close();
         </thead>
 
         <tbody>
-        <tr>
+
             <?php
                 while($row = $result_bowl1->fetch_assoc()) {        
-                    echo "<td>".$row['Name']."</td>";
+                    echo "<tr>";
+                    echo '<td><input type="text" name="bowl1_id[]"readonly></td>';
+                    echo '<td><input type="text" name="bowl1_name[]" value='.$row['Name'].' readonly></td>';
                     echo '<td><input type="number" name="bowl1_O[]"></td>';
                     echo '<td><input type="number" name="bowl1_M[]"></td>';
                     echo '<td><input type="number" name="bowl1_W[]"></td>';
                     echo '<td><input type="number" name="bowl1_NB[]"></td>';
                     echo '<td><input type="number" name="bowl1_WB[]"></td>';
+                    echo "</tr>";            
                     }
             ?>
-        </tr>
+        
         </tbody>
 
     </table>
@@ -124,22 +135,21 @@ $connection->close();
         </thead>
 
         <tbody>
-        <tr>
             <?php
-                while($row = $result_bowl2->fetch_assoc()) {    
-                    echo "<td>".$row['Name']."</td>";
+                while($row = $result_bowl2->fetch_assoc()) {                    
+                    echo "<tr>";
+                    echo '<td><input type="text" name="bowl2_id[]"readonly></td>';
+                    echo '<td><input type="text" name="bowl2_name[]" value='.$row['Name'].' readonly></td>';
                     echo '<td><input type="number" name="bowl2_O[]"></td>';
                     echo '<td><input type="number" name="bowl2_M[]"></td>';
                     echo '<td><input type="number" name="bowl2_W[]"></td>';
                     echo '<td><input type="number" name="bowl2_NB[]"></td>';
                     echo '<td><input type="number" name="bowl2_WB[]"></td>';                }
-            ?>
-        </tr>    
+                    echo '</tr>';  
+            ?>  
         </tbody>
-
     </table>
-
-    <button type="submit" class="btn btn-primary" name="Next1">Next</button>
+    <button type="submit" class="btn btn-primary" name="Next2">Next</button>
 </form>
 </body>
 </html>

@@ -67,6 +67,7 @@ if(isset($_POST['Next2'])){
 $first=$_POST['first'];
 $second=$_POST['second'];
 
+
 $sql3="SELECT Name,Player_ID FROM PLAYER where Team='{$first}' and Position in ('Batsman','AllRound','WktKpr')";
 $sql4="SELECT Name,Player_ID FROM PLAYER where Team='{$second}' and Position in ('Batsman','AllRound','WktKpr')";
 
@@ -116,7 +117,7 @@ $connection->close();
 
             <?php
                while($row = $result_bat1->fetch_assoc()) {
-    
+            //    $row = $result_bat1->fetch_assoc();
                     echo "<tr>";
                     echo '<td><input type="text" name="bat1_id[]" value='.$row['Player_ID'].' readonly></td>';
                     echo '<td><input type="text" name="bat1_name[]" value='.$row['Name'].' readonly></td>';
@@ -152,7 +153,7 @@ $connection->close();
         </tr>
         </thead>
         <tbody>
-        <?php/*
+        <?php
                 while($row = $result_bat2->fetch_assoc()) {
                     echo "<tr>";
                     echo '<td><input type="text" name="bat2_id[]" value='.$row['Player_ID'].' readonly></td>';
@@ -164,7 +165,7 @@ $connection->close();
                     echo '<td><input type="number" name="bat2_Es[]"></td>';
                     echo '<td><input type="text" name="bat2_S[]"></td>';
                     echo "</tr>";            
-                  }*/
+                  }
             ?>  
         </tbody>
     </table>

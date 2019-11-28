@@ -6,28 +6,28 @@
     <body class="text-center" data-gr-c-s-loaded="true">
         <br><br><br>
         <form action="Index_player.php">
-        <button type="submit">ADD PLAYER</button>
+        <button type="submit" class="btn btn-dark">ADD PLAYER</button>
         </form>
         
         <form action="Index_umpire.php">
-        <button type="submit">UMPIRE</button>
+        <button type="submit" class="btn btn-secondary">UMPIRE</button>
         </form>
         
         <form action="Index_stadium.php">
-        <button type="submit">STADIUM</button>
+        <button type="submit" class="btn btn-dark">STADIUM</button>
         </form>
         
         <form action="Index_team.php">
-        <button type="submit">TEAM</button>
+        <button type="submit" class="btn btn-secondary">TEAM</button>
         </form>
         
         <form action="Index_match.php">
-        <button type="submit">MATCH</button>
+        <button type="submit" class="btn btn-dark">MATCH</button>
         </form>
         
-        
-        <form action="Index_login.php">
-        <button type="submit">EXIT</button>
+        <br><br>
+        <form action="Index_login.php"  onclick="return confirm('Are you sure you want to exit?')">
+        <button type="submit" class="btn btn-info">Log-Out</button>
         </form>
     </body>
 </html>

@@ -22,6 +22,10 @@ if(isset($_POST['submit1'])){
     $Dismis = $_POST['input_Dismissals'];
     $ip_date = $_POST['input_date'];
 
+    $end=date_create($ip_date);
+    date_sub($end,date_interval_create_from_date_string("16 years"));
+    
+
     $sql = "INSERT INTO PLAYER  VALUES ('{$name}','{$id}','{$country}',{$Dismis},'{$team}','{$position}','{$ip_date}')";
     $connection->query($sql);
 }
@@ -58,25 +62,19 @@ if(isset($_POST['submit1'])){
                                 <br>
                                     <label>Date Of Birth : </label>
                                     <br>
-                                    <input type="date" class="form-control" name="inputDOB" placeholder="Enter DOB">
+                                    <input type="date" class="form-control" name="inputDOB" placeholder="Enter DOB" min="1955-01-01" max="<?php echo date_format($end,"Y-m-d"); ?>" required>
                                     <br>
 
                                 </div>
                                 <div class="form-group">
                                     <label>Height :</label>
-                                    <input type="number" class="form-control" name="input_Ht" placeholder="in cm">
+                                    <input type="number" class="form-control" name="input_Ht" placeholder="in cm" required>
                                     <label>Weight :</label>
-                                    <input type="number" class="form-control" name="input_Wt" placeholder="in kg">
-                                </div>
-                                <div class="form-group">
-                                    <label>Age</label>
-                                    <br>
-                                    <input type="number" class="form-control" name="input_Age" placeholder="">
-                                    </br>
+                                    <input type="number" class="form-control" name="input_Wt" placeholder="in kg" required>
                                 </div>
                                 <button type="submit" name="button1">Next</button>
                                 <br>
-                            </form>                            
+                            </form>      
                         </div>
                     </div>
                 </div>

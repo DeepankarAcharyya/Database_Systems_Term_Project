@@ -12,9 +12,9 @@
         <form action="Match_ID_Input.php">
             <button type="submit" class="btn btn-warning">SCORECARD</button>
         </form>
-
+        <br><br>
         <form action="Index_menu.php">
-            <button type="submit" class="btn btn-warning">BACK</button>
+            <button type="submit">BACK</button>
         </form>
     </body>
 </html>

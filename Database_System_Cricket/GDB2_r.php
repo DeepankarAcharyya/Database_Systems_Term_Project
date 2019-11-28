@@ -22,8 +22,10 @@ $Eco = $_POST['ip_Eco'];
 $Avgb = $_POST['ip_avgb'];
 $style = $_POST['ip_style'];
 // insert  player id;
+if($match!='0'){
 $sql = "INSERT INTO Game_Data_Bowling  VALUES ('{$id}',{$match},{$balls_bowled},{$conceded},{$wickets},{$Eco},{$Avgb},'{$style}');";
 $result =$connection->query($sql);
+}
 }
 $connection->close();
 header("Location:Index_menu.php");

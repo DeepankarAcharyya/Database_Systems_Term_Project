@@ -23,6 +23,8 @@ $result1=$connection->query($sql1);
 $result2=$connection->query($sql2);
 $result3=$connection->query($sql3);
 
+$today=date("Y-m-d");
+
 ?>
 
 <html>   
@@ -36,7 +38,7 @@ $result3=$connection->query($sql3);
         <br>
             Match ID : <input type="text" name="match_ID" size="8" required>
         <br><br>
-            Date : <input type="date" name="date" required>
+            Date : <input type="date" name="date" required max="<?php echo date_format($today,"Y-m-d"); ?>"  required>
         <br><br>
             Start Time : <input type="time" name="time" required>
         <br><br>

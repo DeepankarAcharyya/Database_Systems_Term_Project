@@ -25,8 +25,9 @@ $s50 = $_POST['ip_50s'];
 $s6 = $_POST['ip_6s'];
 $s4 = $_POST['ip_4s'];
 // insert  player id;
+if($match!='0'){
 $sql = "INSERT INTO Game_Data_Batting  VALUES ('{$id}',{$match},{$run},{$ball_faced},{$avg},{$SR},{$s100},{$s50},{$s6},{$s4});";
-$result =$connection->query($sql);
+$result =$connection->query($sql);}
 //echo "done h ";
 //header("Loaction: ../PL_r_GDB!_e.php?reg=sucess");
 }
@@ -55,32 +56,32 @@ $result =$connection->query($sql);
                                         <div class="form-group">
                                             <label>Player_ID</label>
                                             <br>
-                                            <input type="hidden" class="form-control" name="inputId" value="<?php echo $id; ?>">
+                                            <input type="text" class="form-control" name="inputId" value="<?php echo $id; ?>" readonly>
                                         </div>
                                         <div class="form-group">
                                             <label>NO. of Matches :  </label>
-                                             <input type="number" class="form-control" name="ip_no_matchB">
+                                             <input type="number" class="form-control" name="ip_no_matchB" required>
                                         </div>
                                         <div class="form-label-group">
                                             <label>Balls Bowled :  </label>
-                                            <input type="number" class="form-control" name="ip_ballBowled">
+                                            <input type="number" class="form-control" name="ip_ballBowled" required>
                                         </div>
                                             
                                         <div class="form-label-group">
                                             <label>Run Conceled :</label>
-                                            <input type="number" class="form-control" name="ip_conceded">
+                                            <input type="number" class="form-control" name="ip_conceded" required>
                                             <label>Wicket :</label>
-                                            <input type="number" class="form-control" name="ip_wicket">
+                                            <input type="number" class="form-control" name="ip_wicket" required>
                                         </div>
                                         <div class="form-label-group">
                                             <label>Economy :</label>
-                                            <input type="number" class="form-control" name="ip_Eco">
+                                            <input type="number" class="form-control" name="ip_Eco" required>
                                         <label>Average :</label>
-                                            <input type="number" class="form-control" name="ip_avgb">
+                                            <input type="number" class="form-control" name="ip_avgb" required>
                                         </div>
                                         <div class="form-label-group">
                                             <label>Style :</label>
-                                            <input type="text" class="form-control" name="ip_style"  placeholder="bowler's style ">
+                                            <input type="text" class="form-control" name="ip_style"  placeholder="bowler's style " required>
 
                                         </div>
                                         <br>
